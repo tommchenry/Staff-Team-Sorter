@@ -5,9 +5,7 @@ def sortTeams(allStaff):
     sorted into randomized two-person teams.
     '''
     newTeams=[]
-    staffCopy=allStaff
-    print len(allStaff)
-    print 'Happy Halloween 2014!\nHere are this year\'s terrifying teamups:\n'
+    staffCopy=list(allStaff)
     for i in range(len(allStaff)):
 	selectedStaff=random.randrange(0, len(staffCopy))
 	newTeams.append(staffCopy[selectedStaff])
@@ -16,11 +14,13 @@ def sortTeams(allStaff):
     displayList(allStaff)
 	      
 def displayList(sortedList):
+    print 'Happy Halloween 2014!\nHere are this year\'s terrifying teamups:\n'
     for i in range(len(sortedList)):
         if (i+1)%2==0:
 	   print 'Team', i/2+1, ':', sortedList[i-1], 'and', sortedList[i]
     if len(sortedList)%2!=0:
         print 'Team', len(sortedList)/2+1, ':', sortedList[-1]
+    print '---------\n' 
 	      	      
 def createList():
     '''
