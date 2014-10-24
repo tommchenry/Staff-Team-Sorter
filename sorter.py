@@ -6,6 +6,7 @@ def sortTeams(allStaff):
 	'''
 	newTeams=[]
 	staffCopy=allStaff
+	print len(allStaff)
 	print 'Happy Halloween 2014!\nHere are this year\'s terrifying teamups:\n'
 	for i in range(len(allStaff)):
 	    selectedStaff=random.randrange(0, len(staffCopy))
@@ -13,6 +14,10 @@ def sortTeams(allStaff):
 	    staffCopy.remove(staffCopy[selectedStaff])
             if (i+1)%2==0:
 	      print 'Team', i/2+1, ':', newTeams[i-1], 'and', newTeams[i]
+        if len(newTeams)%2!=0:
+            print 'Team', len(newTeams)/2+1, ':', newTeams[-1]
+	      
+	  
 	    	
-allStaff=['The Guy','The Girl','Paisley','Boo Radley']
+allStaff=['The Guy','The Girl','Paisley','Boo Radley','Tanjo']
 sortTeams(allStaff)
