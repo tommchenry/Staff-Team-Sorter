@@ -47,5 +47,4 @@ def createList():
             allStaff.append(command)
             print '---------\n'  
 	    	
-allStaff=['The Guy','The Girl','Paisley','Boo Radley','Tanjo', 'Tony', 'Alicia', 'A Dog']
 createList()
