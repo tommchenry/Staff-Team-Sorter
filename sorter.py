@@ -1,4 +1,13 @@
 import random
+import string
+ROSTER_FILENAME = "roster.txt"
+
+def importRoster():
+    inFile = open(ROSTER_FILENAME, 'r', 0)
+    roster_raw = inFile.read()
+    allStaff = roster_raw.splitlines()
+    return allStaff
+    
 def sortTeams(allStaff):
     '''
     Takes a list of all staff members and returns a list of staff
@@ -34,11 +43,13 @@ def createList():
             print 'Current Roster:'
             for member in allStaff:
                 print member
-        command=raw_input('Enter a name to add them to the staff roster.\n(S to sort, R to reroll, X to exit): ')
+        command=raw_input('Enter a name to add them to the staff roster.\n(I to import, S to sort, R to reroll, X to exit): ')
         print command
         if command == 'X' or command == 'x':
             print 'Exiting.'
             running = False
+        elif command == 'I' or command == 'i':
+            allStaff=importRoster()
         elif command == 'S' or command == 's':
             sortTeams(allStaff)
         elif command == 'R' or command == 'r':
