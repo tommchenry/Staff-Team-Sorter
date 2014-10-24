@@ -28,7 +28,7 @@ def createList():
     '''
     allStaff = []
     running = True 
-    print 'Pumpkin Carving Team Creator 0.1'
+    print 'Pumpkin Carving Team Creator 1.0'
     while running == True:
         if len(allStaff) > 0:
             print 'Current Roster:'
