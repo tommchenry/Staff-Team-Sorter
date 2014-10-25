@@ -2,11 +2,12 @@ import random
 import string
 ROSTER_FILENAME = "roster.txt"
 
-def importRoster():
+def importRoster(allStaff):
     inFile = open(ROSTER_FILENAME, 'r', 0)
     roster_raw = inFile.read()
-    allStaff = roster_raw.splitlines()
-    return allStaff
+    roster_raw = roster_raw.splitlines()
+    for name in roster_raw:
+	allStaff.append(name)
     
 def sortTeams(allStaff):
     '''
@@ -37,7 +38,7 @@ def createList():
     '''
     allStaff = []
     running = True 
-    print 'Pumpkin Carving Team Creator 1.0'
+    print 'Pumpkin Patch Partner Picker 1.2'
     while running == True:
         if len(allStaff) > 0:
             print 'Current Roster:'
@@ -49,7 +50,7 @@ def createList():
             print 'Exiting.'
             running = False
         elif command == 'I' or command == 'i':
-            allStaff=importRoster()
+            importRoster(allStaff)
         elif command == 'S' or command == 's':
             sortTeams(allStaff)
         elif command == 'R' or command == 'r':
